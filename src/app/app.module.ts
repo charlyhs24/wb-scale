@@ -12,6 +12,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +28,10 @@ import { MatInputModule } from '@angular/material/input';
     MatDividerModule,
     MatToolbarModule,
     MatGridListModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

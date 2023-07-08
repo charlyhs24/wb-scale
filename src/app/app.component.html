@@ -1,5 +1,5 @@
 <mat-toolbar>
-  Responsive sidebar navigation
+  PT. Sawit Tani Mandiri
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -31,46 +31,55 @@
   <mat-sidenav-content>
 
     <div class="content">
-      <mat-grid-list cols="4" rowHeight="100px">
-        <mat-grid-tile [colspan]="2" rowspan="1">
-          <mat-form-field class="example-full-width">
-            <mat-label>No. Polisi/Kendaraan</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
+      <!-- Indicator Weight -->
+      <mat-card [style.marginBottom]="'20px'">
+        <mat-card-content [style]="styleIndicator" align="center">
+          <h1 [style]="styleIndicatorValue">
+            US,NT,+000040.Kg
+          </h1>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button>Berhenti</button>
+          <button mat-button (click)="requestPorts()">Timbang</button>
+        </mat-card-actions>
+      </mat-card>
+
       <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Leave a comment</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-        </mat-form-field>
+        <mat-card>
+          <mat-card-content>
+            <mat-grid-list cols="4" rowHeight="100px">
+              <mat-grid-tile [colspan]="2" rowspan="1">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tanggal</mat-label>
+                  <input matInput type="date">
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2" rowspan="1">
+                <mat-form-field class="example-full-width">
+                  <mat-label>No. Polisi/Kendaraan</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2" rowspan="1">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nama Supir</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2" rowspan="1">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Berat Bruto</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button>Batalkan</button>
+            <button mat-button>Submit</button>
+          </mat-card-actions>
+        </mat-card>
       </form>
-      <!-- <form action="">
-        <mat-form-field class="example-full-width">
-          <mat-label>No. Polisi/Kendaraan</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Nama Supir</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Berat Bruto</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Berat Tara (kosong)</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-      </form> -->
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

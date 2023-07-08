@@ -7,11 +7,22 @@ import { NgxSerial } from 'ngx-serial';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  private serial: NgxSerial;
+  public styleIndicator = {
+    backgroundColor: 'black',
+    borderRadius: '5px',
+    height: '30px',
+    padding: '20px',
+  };
+  public styleIndicatorValue = {
+    color: 'red',
+    fontSize: '40px',
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+  };
   port: any;
   title = 'weight-scale-client';
   public indicator: string;
-
+  private serial: NgxSerial;
   constructor() {
     this.indicator = 'ST 00000 UK';
     let options = { baudRate: 9600, dataBits: 7, parity: 'even' };
