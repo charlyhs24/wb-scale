@@ -32,17 +32,8 @@
 
     <div class="content">
       <!-- Indicator Weight -->
-      <mat-card [style.marginBottom]="'20px'">
-        <mat-card-content [style]="styleIndicator" align="center">
-          <h1 [style]="styleIndicatorValue">
-            US,NT,+000040.Kg
-          </h1>
-        </mat-card-content>
-        <mat-card-actions align="end">
-          <button mat-button>Berhenti</button>
-          <button mat-button (click)="requestPorts()">Timbang</button>
-        </mat-card-actions>
-      </mat-card>
+      <app-weight-indicator [indicatorInput]="indicatorInput"
+        (requestPortEvent)="requestPorts()"></app-weight-indicator>
 
       <form class="example-form">
         <mat-card>

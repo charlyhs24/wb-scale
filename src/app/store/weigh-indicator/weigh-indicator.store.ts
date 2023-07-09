@@ -8,10 +8,10 @@ export class WeighIndicatorStore extends Store<WeighIndicatorState> {
     super(new WeighIndicatorState());
   }
 
-  setTerminal(terminal: string): void {
+  setIndicatorvalue(indicatorVal: string): void {
     this.setState({
       ...this.state,
-      terminal: terminal,
+      indicatorValue: indicatorVal,
     });
   }
 

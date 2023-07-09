@@ -15,9 +15,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { WeightIndicatorComponent } from './shared/components/weight-indicator/weight-indicator.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WeightIndicatorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +34,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,12 @@
+<mat-card [style.marginBottom]="'20px'">
+    <mat-card-content [style]="styleIndicator" align="center">
+        <input [formControl]="indicatorInput" type="text" [style]="styleIndicatorValue">
+        <!-- <h1 [style]="styleIndicatorValue">
+            {{indicatorValue}}
+        </h1> -->
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button>Berhenti</button>
+        <button mat-button (click)="requestPorts()">Timbang</button>
+    </mat-card-actions>
+</mat-card>
