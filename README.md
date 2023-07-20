@@ -1,26 +1,28 @@
-# WeightScaleClient
+# wb-scale
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Aplikasi ini digunakan untuk menghubungkan jembatan timbangan dengan indikator timbangan, dimana indikator timbagan akan mengirimkan data yang lebih akurat. aplikasi ini dibuat untuk mengurangi kesalahan input pada nilai timbangan yang tertera di indikator timbangan, sehingga operator tidak perlu lagi mengisi ulang nilai yang tertera pada indikator timbangan.
+
+Aplikasi ini dikembangkan menggunakan [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+
+## Jembatan Timbangan
+
+![Alt Text](https://github.com/charlyhs24/wb-scale/weight-bridge.jpg)
+
+## Indikator Timbangan
+
+![Alt Text](https://github.com/charlyhs24/wb-scale/weight-indicator.jpeg)
+
+## Halaman Dashboard
+
+![Alt Text](https://github.com/charlyhs24/wb-scale/dashboard.PNG)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` untuk mode development. jalankan di browser `http://localhost:4200/`. aplikasi akan otomatis refresh ulang jika terjadi perubahan pada source code.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng build` untuk build project ini. hasil build project akan tersimpan di folder `dist/`.
 
 ## Further help
 
