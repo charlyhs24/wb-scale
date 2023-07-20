@@ -1,44 +1,69 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 import { NgxSerial } from 'ngx-serial';
-import { WeighIndicatorStore } from './store/weigh-indicator/weigh-indicator.store';
-import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [WeighIndicatorStore],
 })
 export class AppComponent {
-  indicatorInput = new FormControl('');
-  arrValue: Array<String> = [''];
-  port: any;
-  title = 'weight-scale-client';
-  public indicatorValue: string = '';
+  public port: any;
+  public portIsOpen: boolean;
+  public indicatorValue: string;
+  public weightScaleFormGroup = new FormGroup({
+    date: new FormControl(''),
+    policeNumber: new FormControl(''),
+    driverName: new FormControl(''),
+    bruto: new FormControl(''),
+  });
+
   private serial: any;
-  constructor(public store: WeighIndicatorStore) {}
+  constructor() {
+    this.portIsOpen = false;
+    this.indicatorValue = 'US,NT,+000000.Kg';
+  }
 
   ngOnInit(): void {
     this.serial = new NgxSerial(
-      this.dataHandler,
-      this.store.state.options,
+      this.dataHandler.bind(this),
+      {
+        baudRate: 9600,
+        dataBits: 7,
+        parity: 'even',
+      },
       '\n'
     );
   }
-  public async requestPorts() {
+  public scaleButton(): void {
+    this.requestPorts();
+  }
+
+  public stopButton(): void {
+    this.close();
+    let indicatorValueToArr: Array<String> = this.indicatorValue.split('+');
+    let valueOfScale = indicatorValueToArr[1].split('.');
+    this.weightScaleFormGroup.controls['bruto'].setValue(
+      parseInt(valueOfScale[0])
+    );
+  }
+
+  weightScaleFormOnSubmit(): void {
+    console.log('submited');
+  }
+  private async requestPorts() {
     if ('serial' in navigator) {
       this.connect();
     }
     // alert this browser not support serial port
   }
 
-  dataHandler(data: string) {
-    // console.log(data);
-    // this.store.setIndicatorvalue('hello world');
-    this.arrValue.push(data);
+  private dataHandler(data: string) {
+    this.indicatorValue = data;
   }
 
   private connect(): void {
+    this.portIsOpen = true;
     if (!this.port) {
       this.serial.connect((port: any) => {
         this.port = port;
@@ -47,6 +72,7 @@ export class AppComponent {
   }
 
   private close(): void {
+    this.portIsOpen = false;
     if (this.port)
       this.serial.close((port: any) => {
         this.port = port;
