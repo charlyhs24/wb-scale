@@ -6,15 +6,15 @@ Aplikasi ini dikembangkan menggunakan [Angular CLI](https://github.com/angular/a
 
 ## Jembatan Timbangan
 
-![Alt Text](https://github.com/charlyhs24/wb-scale/weight-bridge.jpg)
+![Alt Text](https://github.com/charlyhs24/wb-scale/blob/master/weight-bridge.jpg)
 
 ## Indikator Timbangan
 
-![Alt Text](https://github.com/charlyhs24/wb-scale/weight-indicator.jpeg)
+![Alt Text](https://github.com/charlyhs24/wb-scale/blob/master/weight-indicator.jpeg)
 
 ## Halaman Dashboard
 
-![Alt Text](https://github.com/charlyhs24/wb-scale/dashboard.PNG)
+![Alt Text](https://github.com/charlyhs24/wb-scale/blob/master/dashboard.PNG)
 
 ## Development server
 
