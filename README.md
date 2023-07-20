@@ -8,7 +8,7 @@ Aplikasi ini dikembangkan menggunakan [Angular CLI](https://github.com/angular/a
 
 ![Alt Text](https://github.com/charlyhs24/wb-scale/blob/master/weight-bridge.jpg)
 
-## Indikator Timbangan
+## Indikator Timbangan (GSC SGW-3015S)
 
 ![Alt Text](https://github.com/charlyhs24/wb-scale/blob/master/weight-indicator.jpeg)
 
